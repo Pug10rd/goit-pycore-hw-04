@@ -27,15 +27,12 @@ def dir_counter(path=Path):
         
         for item in path.iterdir():
             if item.is_dir():
-                dir_counter(item)
-                
-                           
+                dir_counter(item)                           
             else:
                 counter = counter + 1
                 print(f'{"\t" * counter}{Fore.GREEN}{item.name}{Fore.RESET}')
                 counter -= 1
         counter -= 1
-
     else:
         counter += 1
         print(f'{"\t" * counter }{Fore.GREEN}{path.name}{Fore.RESET}')
